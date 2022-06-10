@@ -24,8 +24,34 @@ h1 {
     gap: 5px;
 }
 
+#keyboard {
+    width: 647px;
+    height: 252px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
 .tile {
     width: 90px;
     height: 90px;
     border: 1px solid gray;
+}
+
+.key {
+    width: 60px;
+    height: 80px;
+    border: 1px solid gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.key:nth-child(11) {
+    margin-left: 32px;
+}
+
+.key:nth-child(20), .key:nth-child(28){
+    width:92px;
 }
