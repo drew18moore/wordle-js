@@ -4,6 +4,9 @@ const keys = [
     "ENTER", "Z", "X", "C", "V", "B", "N", "M", "DELETE"
 ];
 
+let user_input = [];
+let turn = 0;
+
 window.onload = function() {
     createBoard();
     createKeyboard();
@@ -14,6 +17,7 @@ function createBoard() {
         for (let j = 0; j < 5; j++) {
             let tile = document.createElement("div");
             tile.classList.add("tile");
+            tile.innerHTML = user_input
             document.getElementById("board").appendChild(tile);
         }
     }
@@ -24,6 +28,15 @@ function createKeyboard() {
         let key = document.createElement("div");
         key.classList.add("key");
         key.innerHTML = keys[i];
+        key.addEventListener("click", selectKey);
         document.getElementById("keyboard").appendChild(key);
+    }
+}
+
+function selectKey() {
+    console.log("USER PRESSED", this.innerHTML);
+    if (this.innerHTML != "ENTER" && this.innerHTML != "DELETE") {
+        user_input.push(this.innerHTML);
+        console.log(user_input);
     }
 }
