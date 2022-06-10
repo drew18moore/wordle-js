@@ -37,6 +37,9 @@ h1 {
     width: 90px;
     height: 90px;
     border: 1px solid gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .key {

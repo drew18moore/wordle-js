@@ -35,8 +35,17 @@ function createKeyboard() {
 
 function selectKey() {
     console.log("USER PRESSED", this.innerHTML);
-    if (this.innerHTML != "ENTER" && this.innerHTML != "DELETE") {
+    if (this.innerHTML != "ENTER" && this.innerHTML != "DELETE" && user_input.length < 5) {
         user_input.push(this.innerHTML);
         console.log(user_input);
+        updateBoard();
+    }
+}
+
+function updateBoard() {
+    for(let i = 0; i < user_input.length; i++) {
+        let a = document.querySelectorAll(".tile");
+        let b = [...a];
+        b[i].innerHTML = user_input[i];
     }
 }
