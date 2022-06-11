@@ -4,6 +4,7 @@ const keys = [
     "ENTER", "Z", "X", "C", "V", "B", "N", "M", "DELETE"
 ];
 
+let word = "crane";
 let user_input = [];
 let turn = 0;
 
@@ -44,15 +45,28 @@ function selectKey() {
         console.log(user_input);
         updateBoard();
     } else if (this.innerHTML == "ENTER" && user_input.length == 5) {
-        user_input = []
+        checkWord();
+        user_input = [];
         turn ++;
     }
 }
 
 function updateBoard() {
+    let allTiles = document.querySelectorAll(".tile");
+    allTiles = [...allTiles];
     for(let i = 0; i < 5; i++) {
-        let a = document.querySelectorAll(".tile");
-        let b = [...a];
-        b[i + turn*5].innerHTML = ((user_input.length -1 < i) ? "" : user_input[i]);
+        allTiles[i + turn*5].innerHTML = ((user_input.length -1 < i) ? "" : user_input[i]);
+    }
+}
+
+function checkWord() {
+    let allTiles = document.querySelectorAll(".tile");
+    allTiles = [...allTiles];
+    for (let i = 0; i < user_input.length; i++) {
+        if (word.toUpperCase()[i] == user_input[i]) {
+            allTiles[i + turn*5].classList.add("green");
+        } else if (word.toUpperCase().includes(user_input[i]) && word.toUpperCase()[i] != user_input[i]) {
+            allTiles[i + turn*5].classList.add("yellow");
+        }
     }
 }
