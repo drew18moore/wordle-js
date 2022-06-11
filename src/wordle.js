@@ -6,6 +6,7 @@ const keys = [
 
 let word = "crane";
 let user_input = [];
+let numGreenTiles = 0;
 let turn = 0;
 
 window.onload = function() {
@@ -47,7 +48,11 @@ function selectKey() {
     } else if (this.innerHTML == "ENTER" && user_input.length == 5) {
         checkWord();
         user_input = [];
-        turn ++;
+        turn++;
+        if (turn > 5) {
+            console.log("YOU LOSE");
+            freezeKeyboard();
+        }
     }
 }
 
@@ -65,8 +70,26 @@ function checkWord() {
     for (let i = 0; i < user_input.length; i++) {
         if (word.toUpperCase()[i] == user_input[i]) {
             allTiles[i + turn*5].classList.add("green");
+            numGreenTiles++;
+            console.log("NUM GREEN TILES", numGreenTiles);
         } else if (word.toUpperCase().includes(user_input[i]) && word.toUpperCase()[i] != user_input[i]) {
             allTiles[i + turn*5].classList.add("yellow");
         }
+    }
+
+    if (numGreenTiles == 5) {
+        console.log("YOU WIN");
+        freezeKeyboard();
+
+    } else {
+        numGreenTiles = 0;
+    }
+}
+
+function freezeKeyboard() {
+    let allKeys = document.querySelectorAll(".key");
+    allKeys = [...allKeys];
+    for (let i = 0; i < keys.length; i++) {
+        allKeys[i].removeEventListener("click", selectKey);
     }
 }
