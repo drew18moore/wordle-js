@@ -39,13 +39,17 @@ function selectKey() {
         user_input.push(this.innerHTML);
         console.log(user_input);
         updateBoard();
+    } else if (this.innerHTML == "DELETE") {
+        let val = user_input.pop();
+        console.log(user_input);
+        updateBoard();
     }
 }
 
 function updateBoard() {
-    for(let i = 0; i < user_input.length; i++) {
+    for(let i = 0; i < 5; i++) {
         let a = document.querySelectorAll(".tile");
         let b = [...a];
-        b[i + turn*5].innerHTML = user_input[i];
+        b[i + turn*5].innerHTML = ((user_input.length -1 < i) ? "" : user_input[i]);
     }
 }
