@@ -13,7 +13,7 @@ window.onload = function() {
 }
 
 function createBoard() {
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 6; i++) {
         for (let j = 0; j < 5; j++) {
             let tile = document.createElement("div");
             tile.classList.add("tile");
