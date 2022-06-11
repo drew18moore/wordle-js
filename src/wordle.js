@@ -43,6 +43,9 @@ function selectKey() {
         let val = user_input.pop();
         console.log(user_input);
         updateBoard();
+    } else if (this.innerHTML == "ENTER" && user_input.length == 5) {
+        user_input = []
+        turn ++;
     }
 }
 
