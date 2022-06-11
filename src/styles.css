@@ -9,10 +9,12 @@
     box-sizing: border-box;
     text-align: center;
     font-family: Roboto-Reg;
+    background-color: #121213
 }
 
 h1 {
     margin: 20px;
+    color: white;
 }
 
 #board {
@@ -36,20 +38,27 @@ h1 {
 .tile {
     width: 90px;
     height: 90px;
-    border: 1px solid gray;
+    border: 2px solid #3a3a3c;
     display: flex;
     align-items: center;
     justify-content: center;
+    color: white;
+    font-size: 40px;
+    user-select: none;
 }
 
 .key {
     width: 60px;
     height: 80px;
     border: 1px solid gray;
+    border-radius: 5px;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    color: white;
+    background-color: #808384;
+    user-select: none;
 }
 
 .key:nth-child(11) {
@@ -61,9 +70,9 @@ h1 {
 }
 
 .green {
-    background-color: green;
+    background-color: #538E4E;
 }
 
 .yellow {
-    background-color: gold;
+    background-color: #B59F3A;
 }
