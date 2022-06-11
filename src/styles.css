@@ -13,22 +13,27 @@
 }
 
 h1 {
-    margin: 20px;
+    font-size: 30px;
+    margin: 10px;
     color: white;
 }
 
+hr {
+    border: 1px solid gray;
+}
+
 #board {
-    width: 470px;
-    height: 565px;
-    margin: 20px auto;
+    width: 342px;
+    height: 409px;
+    margin: 40px auto;
     display: flex;
     flex-wrap: wrap;
     gap: 5px;
 }
 
 #keyboard {
-    width: 647px;
-    height: 252px;
+    width: 495px;
+    height: 190px;
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
@@ -36,20 +41,21 @@ h1 {
 }
 
 .tile {
-    width: 90px;
-    height: 90px;
+    width: 64px;
+    height: 64px;
     border: 2px solid #3a3a3c;
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
-    font-size: 40px;
+    font-size: 30px;
     user-select: none;
 }
 
 .key {
-    width: 60px;
-    height: 80px;
+    font-size: 14px;
+    width: 45px;
+    height: 60px;
     border: 1px solid gray;
     border-radius: 5px;
     display: flex;
@@ -66,7 +72,7 @@ h1 {
 }
 
 .key:nth-child(20), .key:nth-child(28){
-    width:92px;
+    width:70px;
 }
 
 .green {
@@ -75,4 +81,18 @@ h1 {
 
 .yellow {
     background-color: #B59F3A;
+}
+
+@media(max-width: 500px) {
+    #keyboard {
+        width: 100%;
+    }
+
+    .key {
+        width: 9%;
+    }
+
+    .key:nth-child(20), .key:nth-child(28){
+        width: 14%;
+    }
 }
