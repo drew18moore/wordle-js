@@ -1,1 +1,1 @@
-# Wordle Clone Built With Javascript
+## My recreation of the game Wordle using HTML, CSS, and Javascript
