@@ -46,6 +46,6 @@ function updateBoard() {
     for(let i = 0; i < user_input.length; i++) {
         let a = document.querySelectorAll(".tile");
         let b = [...a];
-        b[i].innerHTML = user_input[i];
+        b[i + turn*5].innerHTML = user_input[i];
     }
 }
