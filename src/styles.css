@@ -12,10 +12,18 @@
     background-color: #121213
 }
 
+html, body {
+    height: 100%;
+    overflow-y: hidden;
+}
+
 #game {
     width: 100%;
+    height: calc(100% - 55px);
     max-width: 500px;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
 }
 
 h1 {
@@ -28,10 +36,16 @@ hr {
     border: 1px solid gray;
 }
 
+#board-container {
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: center;
+}
+
 #board {
     width: 342px;
     height: 409px;
-    margin: 40px auto;
     display: flex;
     flex-wrap: wrap;
     gap: 5px;
