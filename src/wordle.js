@@ -26,12 +26,46 @@ function createBoard() {
 }
 
 function createKeyboard() {
-    for (let i = 0; i < keys.length; i++) {
+    // Row1
+    let row1 = document.createElement("div");
+    row1.setAttribute("id", "row1");
+    row1.classList.add("row");
+    for (let i = 0; i < 10; i++) {
         let key = document.createElement("div");
         key.classList.add("key");
+        key.setAttribute("id", "key" + i);
         key.innerHTML = keys[i];
         key.addEventListener("click", selectKey);
-        document.getElementById("keyboard").appendChild(key);
+        document.getElementById("keyboard").appendChild(row1);
+        document.getElementById("row1").appendChild(key);
+    }
+
+    // Row2
+    let row2 = document.createElement("div");
+    row2.setAttribute("id", "row2");
+    row2.classList.add("row");
+    for (i = 10; i < 19; i++) {
+        key = document.createElement("div");
+        key.classList.add("key");
+        key.setAttribute("id", "key" + i);
+        key.innerHTML = keys[i];
+        key.addEventListener("click", selectKey);
+        document.getElementById("keyboard").appendChild(row2);
+        document.getElementById("row2").appendChild(key);
+    }
+
+    // Row3
+    let row3 = document.createElement("div");
+    row3.setAttribute("id", "row3");
+    row3.classList.add("row");
+    for (i = 19; i < keys.length; i++) {
+        key = document.createElement("div");
+        key.classList.add("key");
+        key.setAttribute("id", "key" + i);
+        key.innerHTML = keys[i];
+        key.addEventListener("click", selectKey);
+        document.getElementById("keyboard").appendChild(row3);
+        document.getElementById("row3").appendChild(key);
     }
 }
 

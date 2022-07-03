@@ -12,6 +12,12 @@
     background-color: #121213
 }
 
+#game {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
 h1 {
     font-size: 30px;
     margin: 10px;
@@ -32,12 +38,7 @@ hr {
 }
 
 #keyboard {
-    width: 495px;
-    height: 190px;
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
+    display: block;
 }
 
 .tile {
@@ -52,13 +53,36 @@ hr {
     user-select: none;
 }
 
+.row {
+    display: flex;
+    width: 100%;
+    margin: 0 auto 8px;
+    gap: 5px;
+}
+
+/*
+    Shape of keyboard
+*/
+#key10 {
+    margin-left: 25.25px;
+}
+
+#key18 {
+    margin-right: 25.25px;
+}
+
+#key19, #key27 {
+    flex: 1.5549;
+}
+
 .key {
     font-size: 14px;
     width: 45px;
     height: 60px;
-    border: 1px solid gray;
+    border: 0px;
     border-radius: 5px;
     display: flex;
+    flex: 1;
     align-items: center;
     justify-content: center;
     cursor: pointer;
@@ -67,32 +91,10 @@ hr {
     user-select: none;
 }
 
-.key:nth-child(11) {
-    margin-left: 32px;
-}
-
-.key:nth-child(20), .key:nth-child(28){
-    width:70px;
-}
-
 .green {
     background-color: #538E4E;
 }
 
 .yellow {
     background-color: #B59F3A;
-}
-
-@media(max-width: 500px) {
-    #keyboard {
-        width: 100%;
-    }
-
-    .key {
-        width: 9%;
-    }
-
-    .key:nth-child(20), .key:nth-child(28){
-        width: 14%;
-    }
 }
