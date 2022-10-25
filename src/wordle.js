@@ -12,6 +12,13 @@ let turn = 0;
 window.onload = function() {
     createBoard();
     createKeyboard();
+    fetchWord();
+}
+
+function fetchWord() {
+    fetch ('https://thatwordleapi.azurewebsites.net/get/')
+        .then((response) => response.json())
+        .then((data) => word = data.Response);
 }
 
 function createBoard() {
