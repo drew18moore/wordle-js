@@ -155,6 +155,8 @@ function checkWord() {
                         word.toUpperCase()[i] != user_input[i]
                     ) {
                         allTiles[i + turn * 5].classList.add("yellow");
+                    } else {
+                        allTiles[i + turn * 5].classList.add("gray");
                     }
                 }
 
