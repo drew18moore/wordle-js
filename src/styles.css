@@ -107,10 +107,12 @@ hr {
 
 .green {
     background-color: #538E4E;
+    border: none;
 }
 
 .yellow {
     background-color: #B59F3A;
+    border: none;
 }
 
 .gray {
