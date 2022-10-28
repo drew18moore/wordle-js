@@ -136,7 +136,7 @@ function checkWord() {
         .then((response) => response.json())
         .then((data) => {
             if (data.Response === false) {
-                console.log("NOT A WORD");
+                alert("NOT A WORD");
                 user_input = [];
                 updateBoard();
                 return;
@@ -164,7 +164,7 @@ function checkWord() {
                 }
 
                 if (numGreenTiles == 5) {
-                    console.log("YOU WIN");
+                    alert("YOU WIN");
                     freezeKeyboard();
                 } else {
                     numGreenTiles = 0;
@@ -176,7 +176,7 @@ function checkWord() {
         })
         .then(() => {
             if (turn > 5) {
-                console.log("YOU LOSE");
+                alert("YOU LOSE");
                 freezeKeyboard();
             }
         });
