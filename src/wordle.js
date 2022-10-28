@@ -169,10 +169,9 @@ function checkWord() {
                     freezeKeyboard();
                 } else {
                     numGreenTiles = 0;
+                    turn++;
+                    user_input = [];
                 }
-
-                turn++;
-                user_input = [];
             }
         })
         .then(() => {
