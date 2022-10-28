@@ -148,6 +148,7 @@ function checkWord() {
                     key = document.querySelector(`#key${keys.indexOf(user_input[i])}`)
                     if (word.toUpperCase()[i] == user_input[i]) {
                         allTiles[i + turn * 5].classList.add("green");
+                        key.classList.remove("yellow");
                         key.classList.add("green");
                         numGreenTiles++;
                     } else if (
