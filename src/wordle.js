@@ -109,11 +109,9 @@ function selectKey() {
         user_input.length < 5
     ) {
         user_input.push(this.innerHTML);
-        console.log(user_input);
         updateBoard();
     } else if (this.innerHTML == "DELETE") {
         let val = user_input.pop();
-        console.log(user_input);
         updateBoard();
     } else if (this.innerHTML == "ENTER" && user_input.length == 5) {
         checkWord();
@@ -145,18 +143,23 @@ function checkWord() {
             } else {
                 let allTiles = document.querySelectorAll(".tile");
                 allTiles = [...allTiles];
+                let key;
                 for (let i = 0; i < user_input.length; i++) {
+                    key = document.querySelector(`#key${keys.indexOf(user_input[i])}`)
                     if (word.toUpperCase()[i] == user_input[i]) {
                         allTiles[i + turn * 5].classList.add("green");
+                        key.classList.add("green");
                         numGreenTiles++;
-                        console.log("NUM GREEN TILES", numGreenTiles);
                     } else if (
                         word.toUpperCase().includes(user_input[i]) &&
                         word.toUpperCase()[i] != user_input[i]
                     ) {
                         allTiles[i + turn * 5].classList.add("yellow");
+                        if (!key.classList.contains("green"))
+                            key.classList.add("yellow");
                     } else {
                         allTiles[i + turn * 5].classList.add("gray");
+                        key.classList.add("gray");
                     }
                 }
 
