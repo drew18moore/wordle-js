@@ -1,120 +1,117 @@
-@font-face {
-    font-family: Roboto-Reg;
-    src: url("../fonts/Roboto-Medium.ttf");
-}
-
 * {
-    padding:0;
-    margin: 0;
-    box-sizing: border-box;
-    text-align: center;
-    font-family: Roboto-Reg;
-    background-color: #121213
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  background-color: #121213;
 }
 
-html, body {
-    height: 100%;
-    overflow-y: hidden;
+html,
+body {
+  height: 100%;
+  overflow-y: hidden;
 }
 
 #game {
-    width: 100%;
-    height: calc(100% - 55px);
-    max-width: 500px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
+  width: 100%;
+  height: calc(100% - 55px);
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
 }
 
 h1 {
-    font-size: 30px;
-    margin: 10px;
-    color: white;
+  font-size: 30px;
+  margin: 10px;
+  color: white;
 }
 
 hr {
-    border: 1px solid gray;
+  border: 1px solid gray;
 }
 
 #board-container {
-    display: flex;
-    flex-grow: 1;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: center;
 }
 
 #board {
-    width: 342px;
-    height: 409px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
+  width: 342px;
+  height: 409px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
 }
 
 #keyboard {
-    display: block;
+  display: block;
 }
 
 .tile {
-    width: 64px;
-    height: 64px;
-    border: 2px solid #3a3a3c;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 30px;
-    user-select: none;
+  width: 64px;
+  height: 64px;
+  border: 2px solid #3a3a3c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 30px;
+  user-select: none;
 }
 
 .row {
-    display: flex;
-    width: 100%;
-    margin: 0 auto 8px;
-    gap: 5px;
+  display: flex;
+  width: 100%;
+  margin: 0 auto 8px;
+  gap: 5px;
 }
 
 /*
     Shape of keyboard
 */
 #key10 {
-    margin-left: 25.25px;
+  margin-left: 25.25px;
 }
 
 #key18 {
-    margin-right: 25.25px;
+  margin-right: 25.25px;
 }
 
-#key19, #key27 {
-    flex: 1.5549;
+#key19,
+#key27 {
+  flex: 1.5549;
 }
 
 .key {
-    font-size: 14px;
-    width: 45px;
-    height: 60px;
-    border: 0px;
-    border-radius: 5px;
-    display: flex;
-    flex: 1;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    color: white;
-    background-color: #808384;
-    user-select: none;
+  font-size: 14px;
+  width: 45px;
+  height: 60px;
+  border: 0px;
+  border-radius: 5px;
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: white;
+  background-color: #808384;
+  user-select: none;
 }
 
 .green {
-    background-color: #538E4E;
-    border: none;
+  background-color: #538e4e;
+  border: none;
 }
 
 .yellow {
-    background-color: #B59F3A;
-    border: none;
+  background-color: #b59f3a;
+  border: none;
 }
 
 .gray {
-    background-color: #3A3A3C;
+  background-color: #3a3a3c;
 }
