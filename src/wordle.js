@@ -40,10 +40,9 @@ window.onload = function () {
   fetchWord();
 };
 
-function fetchWord() {
-  fetch("https://thatwordleapi.azurewebsites.net/get/")
-    .then((response) => response.json())
-    .then((data) => (word = data.Response));
+async function fetchWord() {
+  const data = await fetch("https://wordleapi.azurewebsites.net/api/random?size=5")
+  word = await data.text()
 }
 
 function createBoard() {
@@ -129,18 +128,18 @@ function updateBoard() {
 
 function checkWord() {
   fetch(
-    `https://thatwordleapi.azurewebsites.net/ask/?word=${user_input
+    `https://wordleapi.azurewebsites.net/api/check?input=${user_input
       .join("")
       .toLowerCase()}`
   )
-    .then((response) => response.json())
+    .then((response) => response.text())
     .then((data) => {
-      if (data.Response === false) {
+      if (data === "not_found") {
         alert("NOT A WORD");
         user_input = [];
         updateBoard();
         return;
-      } else {
+      } else if (data === "OK") {
         let allTiles = document.querySelectorAll(".tile");
         allTiles = [...allTiles];
         let key;
@@ -171,6 +170,8 @@ function checkWord() {
           turn++;
           user_input = [];
         }
+      } else {
+        console.log("ERROR")
       }
     })
     .then(() => {
